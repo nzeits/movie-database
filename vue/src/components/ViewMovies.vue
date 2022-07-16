@@ -1,5 +1,6 @@
 <template>
   <div id="main">
+    <div id="cards-area">
     <div id="movie-cards" v-for="movie in movies" v-bind:key="movie.id">
         <div id="title">
         <h2>{{movie.title}}</h2>
@@ -13,6 +14,10 @@
             <!-- Trying to display a star for the rating. Doesn't work with a decimal -->
         <p>{{movie.myRating}}</p>
         </div>
+    </div>
+    </div>
+    <div id="graphic">
+        <img class="image" src="../assets/your-ratings-page-graphic.jpg" alt="movie graphic image">
     </div>
   </div>
 </template>
@@ -51,12 +56,21 @@ export default {
     /* background-color: white; */
     border-radius: 5px;
     backdrop-filter: blur(8px);
-    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 20%);
-    color: white;
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 3%);
+    color: #112D4E;
 }
-#main{
+#cards-area{
+    grid-area: movie-cards;
     display: flex;
     flex-wrap: wrap;
+}
+#main{
+
+    padding: 5%;
+    display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+  "movie-cards graphic";
 }
 #title{
     margin: -10px 0px;
@@ -75,5 +89,10 @@ export default {
 #date :first-child{
     font-style: italic;
 }
-
+#graphic{
+    grid-area: graphic;
+}
+.image{
+    width: 100%;
+}
 </style>
