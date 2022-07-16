@@ -7,6 +7,10 @@
     </nav>
         <div id="page-divider"></div>        
     <router-view/>
+    <footer>
+      <a href="https://www.freepik.com/vectors/cinema-movies" target="_blank">
+      Graphics: Cinema movies vector created by macrovector - www.freepik.com</a>
+    </footer>
   </div>
 </template>
 
@@ -48,4 +52,8 @@ nav a.router-link-exact-active {
 .logo{
   width: 20%;
 }
+footer a{
+  text-decoration: none;
+  color: #3F72AF;
+} 
 </style>
